@@ -1,7 +1,22 @@
+use std::io;
 fn main() {
-    let (a,b) = (98,83);
-    println!("The value of {a} and {b}");
+   let mut s = String::from("hello world");
 
-    let mul = a as f32 * b as f32;
-    println!("Add:{mul}");
+    let word = first_word(&s);
+
+    s.clear(); // error!
+
+    //println!("the first word is: {word}");
+}
+
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
