@@ -1,4 +1,4 @@
-use crede::garden::vegetable::Asparagus;
+use crate::garden::vegetable::Asparagus;
 pub mod garden;
 
 fn main() {
